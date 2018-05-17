@@ -1,0 +1,6 @@
+framework module Pods_GoogleMapsSearchPlaceSwift {
+  umbrella header "Pods-GoogleMapsSearchPlaceSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
