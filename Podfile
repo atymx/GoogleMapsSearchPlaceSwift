@@ -10,6 +10,7 @@ target 'GoogleMapsSearchPlaceSwift' do
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftHTTP'
   pod 'SwiftyJSON'
+  pod 'SWMessages', '~> 0.3.0'
   # Pods for GoogleMapsSearchPlaceSwift
 
 end

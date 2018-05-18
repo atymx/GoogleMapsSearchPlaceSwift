@@ -12,6 +12,7 @@ PODS:
     - GoogleMaps/Base (= 2.7.0)
   - SwiftHTTP (3.0.1)
   - SwiftyJSON (4.1.0)
+  - SWMessages (0.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - GooglePlaces
   - SwiftHTTP
   - SwiftyJSON
+  - SWMessages (~> 0.3.0)
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
@@ -28,7 +30,8 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   SwiftHTTP: e94f1aa8cde58637dcc0100f6349de31a3337fde
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SWMessages: 39dc4ffdde42004b2ee5af14077fc73668498350
 
-PODFILE CHECKSUM: 34428211b09b5bc5a4bcb2921a7cbe254d78ef66
+PODFILE CHECKSUM: ba34b00f666205ebee82eac6fc3a862222ac3bc7
 
 COCOAPODS: 1.4.0
