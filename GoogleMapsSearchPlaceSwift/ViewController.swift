@@ -11,8 +11,9 @@ import GoogleMaps
 import GooglePlaces
 import Alamofire
 import SWMessages
+import SwiftyJSON
 
-class ViewController: UIViewController, UISearchDisplayDelegate {
+class ViewController: UIViewController, UISearchDisplayDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var SearchBar: UISearchBar!
     
@@ -25,10 +26,15 @@ class ViewController: UIViewController, UISearchDisplayDelegate {
         
         self.locationManager.requestWhenInUseAuthorization()
         
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         // Get current coordinates
         let (longitude, latitude) = (self.locationManager.location?.coordinate.longitude, self.locationManager.location?.coordinate.latitude)
         setCurrentLocation(longitude: longitude, latitude: latitude)
-        
     }
     
     func setCurrentLocation(longitude: CLLocationDegrees?, latitude: CLLocationDegrees?) {
@@ -39,13 +45,10 @@ class ViewController: UIViewController, UISearchDisplayDelegate {
                 "lang": "en_US"
             ]
             Alamofire.request(Config.shared.YandexGeocoderApiUrl, parameters: parameters).responseJSON { response in
-                if let json: Parameters = (response.value! as! Parameters)["response"] as? Parameters {
-                    if let objects = (json["GeoObjectCollection"] as! Parameters)["featureMember"] as? [[String: Any]] {
-                        let firstObject = objects[0]["GeoObject"] as? [String: Any]
-                        if let title = ((firstObject!["metaDataProperty"] as! [String: Any])["GeocoderMetaData"] as! [String: Any])["text"] {
-                            self.SearchBar.placeholder = title as? String
-                            self.LoadMap(longitude: longitude, latitude: latitude, title: title as? String)
-                        }
+                if let json = try? JSON(data: response.data!) {
+                    if let currentAddress = json["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]["metaDataProperty"]["GeocoderMetaData"]["text"].string {
+                        self.SearchBar.placeholder = currentAddress
+                        self.LoadMap(longitude: longitude, latitude: latitude, title: currentAddress)
                     }
                 }
             }
