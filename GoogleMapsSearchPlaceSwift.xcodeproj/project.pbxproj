@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A70E80420B183BF0096E3D0 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70E80320B183BF0096E3D0 /* SearchVC.swift */; };
+		2A70E80620B1E84E0096E3D0 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70E80520B1E84E0096E3D0 /* Place.swift */; };
+		2A70E80820B1EA080096E3D0 /* PlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70E80720B1EA080096E3D0 /* PlaceController.swift */; };
 		2A7121D120AE33CF0028EA15 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7121D020AE33CF0028EA15 /* Config.swift */; };
 		2ADFB75020AE2ED300246822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADFB74F20AE2ED300246822 /* AppDelegate.swift */; };
 		2ADFB75220AE2ED400246822 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADFB75120AE2ED400246822 /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		2171C86563AF6E8EDE817744 /* Pods_GoogleMapsSearchPlaceSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapsSearchPlaceSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A70E80320B183BF0096E3D0 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		2A70E80520B1E84E0096E3D0 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		2A70E80720B1EA080096E3D0 /* PlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceController.swift; sourceTree = "<group>"; };
 		2A7121D020AE33CF0028EA15 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2ADFB74C20AE2ED300246822 /* GoogleMapsSearchPlaceSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleMapsSearchPlaceSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADFB74F20AE2ED300246822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +56,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2A70E80920B1F1AF0096E3D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2ADFB75320AE2ED400246822 /* Main.storyboard */,
+				2ADFB75820AE2ED500246822 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2A70E80A20B1F1C20096E3D0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2ADFB75120AE2ED400246822 /* ViewController.swift */,
+				2A70E80320B183BF0096E3D0 /* SearchVC.swift */,
+				2A70E80720B1EA080096E3D0 /* PlaceController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2ADFB74320AE2ED300246822 = {
 			isa = PBXGroup;
 			children = (
@@ -71,13 +96,13 @@
 		2ADFB74E20AE2ED300246822 /* GoogleMapsSearchPlaceSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2A70E80A20B1F1C20096E3D0 /* Controllers */,
+				2A70E80920B1F1AF0096E3D0 /* Storyboards */,
 				2ADFB74F20AE2ED300246822 /* AppDelegate.swift */,
-				2ADFB75120AE2ED400246822 /* ViewController.swift */,
-				2ADFB75320AE2ED400246822 /* Main.storyboard */,
 				2ADFB75620AE2ED500246822 /* Assets.xcassets */,
-				2ADFB75820AE2ED500246822 /* LaunchScreen.storyboard */,
 				2ADFB75B20AE2ED500246822 /* Info.plist */,
 				2A7121D020AE33CF0028EA15 /* Config.swift */,
+				2A70E80520B1E84E0096E3D0 /* Place.swift */,
 			);
 			path = GoogleMapsSearchPlaceSwift;
 			sourceTree = "<group>";
@@ -232,9 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A70E80420B183BF0096E3D0 /* SearchVC.swift in Sources */,
 				2ADFB75220AE2ED400246822 /* ViewController.swift in Sources */,
 				2ADFB75020AE2ED300246822 /* AppDelegate.swift in Sources */,
 				2A7121D120AE33CF0028EA15 /* Config.swift in Sources */,
+				2A70E80620B1E84E0096E3D0 /* Place.swift in Sources */,
+				2A70E80820B1EA080096E3D0 /* PlaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +410,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDKFK4LHVR;
 				INFOPLIST_FILE = GoogleMapsSearchPlaceSwift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = MaksimAtyutskiy.GoogleMapsSearchPlaceSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -398,7 +429,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UDKFK4LHVR;
 				INFOPLIST_FILE = GoogleMapsSearchPlaceSwift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = MaksimAtyutskiy.GoogleMapsSearchPlaceSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
