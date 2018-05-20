@@ -10,22 +10,21 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import Alamofire
-import SWMessages
 import SwiftyJSON
 
-class ViewController: UIViewController, UISearchDisplayDelegate, CLLocationManagerDelegate {
+class MainVC: UIViewController, UISearchDisplayDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var MapView: GMSMapView!
     
     let locationManager = CLLocationManager()
     
-    
     var placeController: PlaceController?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Delete line bellow Nav Bar
         navigationController?.navigationBar.shadowImage = UIImage()
         
         self.locationManager.requestWhenInUseAuthorization()
@@ -36,6 +35,7 @@ class ViewController: UIViewController, UISearchDisplayDelegate, CLLocationManag
             locationManager.startUpdatingLocation()
         }
         
+        // Make an instance of PlaceController class
         if placeController == nil {
             placeController = PlaceController()
         }

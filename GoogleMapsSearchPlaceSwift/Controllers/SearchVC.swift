@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 import CoreLocation
+import Alamofire
 
 class SearchVC: UITableViewController, UISearchBarDelegate {
     
@@ -33,6 +33,7 @@ class SearchVC: UITableViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchResult = []
+        
         let parameters: Parameters = [
             "geocode": searchText,
             "format": "json",
@@ -49,6 +50,7 @@ class SearchVC: UITableViewController, UISearchBarDelegate {
                 self.tableView.reloadData()
             }
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
